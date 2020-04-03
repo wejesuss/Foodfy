@@ -1,0 +1,43 @@
+<div class="user-fields grid">
+    <div class="item">
+        <div class="title">Nome</div>
+        <div class="input">
+            <input type="text" 
+            name="name" 
+            value="{{ user.name }}" required
+            placeholder="Digite seu nome completo"
+            >
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="title">Email</div>
+        <div class="input">
+            <input type="email"
+            name="email" 
+            value="{{ user.email }}" required
+            placeholder="Digite o email"
+            onblur="Validate.apply(this, 'isEmail')"
+            {% if error %}
+                class="red"
+            {% endif %}
+            >
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Senha</div>
+        <div class="input">
+            <input 
+            required
+            type="password" 
+            name="password"
+            placeholder="Digite sua senha"
+            onkeydown="Validate.clearBorderError(this)"
+            {% if error %}
+                class="red"
+            {% endif %}
+            >
+        </div>
+    </div>
+</div>

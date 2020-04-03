@@ -1,0 +1,99 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Receita de
+        {{recipe.title}}</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="recipe">
+        <div class="recipe-header">
+            <div>
+                <div class="highlight">
+                {% if not files[0] %}
+                    <img src="https://placehold.it/940x280?text=Receita sem foto" alt="sem foto">
+                {% else %}
+                    <img 
+                    src="{{files[0].src}}" 
+                    alt="{{files[0].name}}"
+                    onclick="LightBox.open()"
+                    >
+                {% endif %}
+                    <div class="lightbox-target">
+                        <img src="{{files[0].src}}" alt="{{files[0].name}}"/>
+                        <a href="#" class="lightbox-close"
+                        onclick="LightBox.close()"
+                        >
+                            <i class="material-icons">close</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="images-preview" style="grid-template-columns: repeat({{files.length}}, 50px);">
+                    {% for file in files %}
+                    <div class="photo">
+                        <img 
+                        src="{{file.src}}" 
+                        alt="{{file.name}}"
+                        {% if loop.index0 == 0 %}
+                        class="active"
+                        {% endif %}
+                        onclick="ImageGallery.setImage(event)"
+                        ondblclick="ImageGallery.doubleClick(event)"
+                        >
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h2>{{recipe.title}}</h2>
+            <p>por {{recipe.chef_name}}</p>
+        </div>
+
+        <div class="recipe-content">
+
+            <div id="ingredients" class="topic">
+                <div class="recipe-menu">
+                    <h3>Ingredientes</h3>
+                    <h4>ESCONDER</h4>
+                </div>
+                <div class="topic-content">
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+                            <li>{{ingredient}}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div id="preparation" class="topic">
+                <div class="recipe-menu">
+                    <h3>Modo de preparo</h3>
+                    <h4>MOSTRAR</h4>
+                </div>
+                <div class="topic-content hidden">
+                    <ul>
+                        {% for preparation in recipe.preparation %}
+                            <li>{{preparation}}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div id="information" class="topic">
+                <div class="recipe-menu">
+                    <h3>Informações adicionais</h3>
+                    <h4>ESCONDER</h4>
+                </div>
+                <div class="topic-content">
+                    <p>{{recipe.information}}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock content %}

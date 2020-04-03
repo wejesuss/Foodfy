@@ -1,0 +1,22 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Criando receita</title>
+{% endblock head %}
+
+{% block content %}
+<div class="recipe">
+    <form action="/admin/recipes" method="POST" id="save_recipe" enctype="multipart/form-data">
+        <div class="recipe-dashboard">
+            <h4>Criando receita</h4>
+            <button type="submit" onclick="Validate.allFields(event)">Salvar receita</button>
+        </div>
+
+        {% include './recipeModel.njk' %}
+    </form>
+</div>
+
+<script src="/save.js"></script>
+<script src="/addNewField.js"></script>
+
+{% endblock content %}

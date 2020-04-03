@@ -1,0 +1,13 @@
+<header>
+    <a href="/"><img src="/images\layouts\assets\logo.png" alt="logo_foodfy" /></a>
+    <div class="menus">
+        <div>
+            <a id="about" href="/about" rel="options">Sobre</a>
+            <a id="recipes" href="/recipes" rel="options">Receitas</a>
+            <a id="chefs" href="/chefs" rel="options">Chefs</a>
+        </div>
+        {% if searchForm %}
+            {% include 'parts/search.njk' %}
+        {% endif %}
+    </div>
+</header>

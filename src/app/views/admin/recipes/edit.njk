@@ -1,0 +1,29 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Editando receita</title>
+{% endblock head %}
+
+{% block content %}
+<div class="recipe">
+    <div class="recipe-dashboard">
+        <h4>Editando receita</h4>
+        <div class="recipe-controller">
+            <form action="/admin/recipes?_method=DELETE" method="post" class="delete-form">
+                <input type="hidden" name="id" value="{{recipe.id}}">
+                <button id="button-delete" type="submit">Deletar receita</button>
+            </form>
+
+            <button form="save_recipe" type="submit">Salvar receita</button>
+        </div>
+    </div>
+
+    <form action="/admin/recipes?_method=PUT" method="post" id="save_recipe" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{recipe.id}}">
+        
+        {% include './recipeModel.njk' %}
+    </form>
+</div>
+
+<script src="/addNewField.js"></script>
+{% endblock content %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% block head %}
+        <title>Receitas</title>
+    {% endblock head %}
+    <link rel="shortcut icon" href="\images\layouts\assets\Fruits-Strawberries.ico" type="image/x-icon">
+    
+    {% include 'parts/imports.njk' %}
+    </head>
+
+    <body>
+    {% include "parts/messages.njk" %}
+    
+    <div class="header">
+        {% include 'parts/header-admin.njk' %}
+    </div>
+
+    {% block content %}
+    
+    {% endblock content %}
+    
+    <script src="/scripts.js"></script>
+
+    </body>
+</html>

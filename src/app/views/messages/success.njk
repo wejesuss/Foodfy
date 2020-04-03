@@ -1,0 +1,31 @@
+{% extends "model.njk" %}
+
+{% block content %}
+<div class="message success">
+    <div class="lottie success"></div>
+
+    <div class="information">
+        <h3>Perfeito.</h3>
+
+        <p>Sua operação foi realizada com sucesso.</p>
+
+        <a href="/admin/users">
+            <button>Continuar</button>
+        </a>
+    </div>
+</div>
+<script src="/lottie.min.js"></script>
+<script>
+const element = document.querySelector('div.lottie.success')
+
+lottie.loadAnimation({
+  container: element,
+  renderer: 'svg',
+  loop: false,
+  autoplay: true,
+  path: '/animations/17601-complete-001.json'
+})
+
+</script>
+
+{% endblock content %}

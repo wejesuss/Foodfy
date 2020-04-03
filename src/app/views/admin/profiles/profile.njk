@@ -1,0 +1,19 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Atualizar Usuário</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="user-dashboard edit">
+        <h5>Bem vindo {{user.name}}</h5>
+        <div class="options">    
+            <button type="submit" form="edit-user">Salvar</button>
+        </div>
+    </div>
+    <div class="fields edit-box">
+        <form action="/admin/profile?_method=PUT" id="edit-user" method="post" onsubmit="Validate.isInvalid(event)">
+            {% include "./fields.njk" %}
+        </form>
+    </div>
+{% endblock content %}

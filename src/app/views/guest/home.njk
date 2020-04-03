@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block header %}
+    <section class="hero">
+        <div class="presentation">
+            <h1>{{home.title}}</h1>
+            <p>{{home.presentation}}</p>
+        </div>
+        <img src="{{home.chef_url}}"/>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h3>Mais acessadas</h3>
+
+        <div class="recipes">
+            {% for recipe in recipes %}
+                <div class="card">
+                    {% for file in files %}
+                    {% if recipe.id == file.recipe_id %}
+                        <a href="/recipes/{{recipe.id}}"><img src="{{ file.src }}" alt="{{ file.name }}"></a>
+                    {% endif %}
+                    {% endfor %}
+                    <h5>{{recipe.title}}</h5>
+                    <p>por {{recipe.chef_name}}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+    </main>
+{% endblock %}

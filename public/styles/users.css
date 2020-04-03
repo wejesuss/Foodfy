@@ -1,0 +1,156 @@
+.user-dashboard {
+    width: 940px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px auto; 
+}
+
+.user-dashboard h5 {
+    font-size: 24px; 
+    color: #111111;
+}
+
+.user-dashboard button {
+    width: 130px;
+    background: #7159C1;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+main.users {
+    width: 940px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 64px;
+    grid-gap: 60px 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    width: 100%;
+    align-self: center;
+    height: 100%;
+    display: grid;
+    grid-gap: 4px 0;
+    grid-template-rows: 48px 14px;
+}
+
+.user .user-info h5 {
+    font-size: 18px;
+    color: #111111;
+    line-height: 21px;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.user .user-info p {
+    font-size: 14px;
+    color: #777777;
+    line-height: 17px;
+}
+
+.user .user-actions a,
+.user .user-actions button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6558C3;
+    line-height: 17px;
+}
+
+.user .user-actions button {
+    background: none;
+    outline: none;
+    color: #F55A5A;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* USERS REGISTER */
+.user-dashboard.create,
+.user-dashboard.edit {
+    margin-bottom: 40px;
+}
+
+.user-dashboard .options {
+    display: flex;
+}
+
+.user-dashboard .options button#cancel {
+    margin-left: 16px;
+    background: #8A8A8A;
+}
+
+.fields .user-fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.fields .user-fields.grid {
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px 40px;
+}
+
+.fields .user-fields.grid .item:first-child {
+    margin-right: 0;
+}
+
+.fields .user-fields .item:first-child {
+    margin-right: 40px;
+}
+
+.fields .user-fields .item {
+    width: 100%;
+}
+
+.fields .user-fields .item .title {
+    font-family: 'Roboto', sans-serif;
+}
+
+.fields .isAdmin {
+    display: flex;
+    align-items: center;
+}
+
+.fields .isAdmin label {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.fields .isAdmin input[type="checkbox"] {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fields .isAdmin input[type="checkbox"]:after {
+    content: " ";
+    background-color: #FFFFFF;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #DDDDDD;
+    top: -2px;
+    width: 15px;
+    height: 15px;
+}
+  
+.fields .isAdmin input[type="checkbox"]:checked:after {
+    content: "\00a0\2714";
+}
+  
+.fields .input input.error,
+.fields .input input.red {
+    background: #FFFFFF;
+    border: 1px solid #FF3131;
+}
+
+

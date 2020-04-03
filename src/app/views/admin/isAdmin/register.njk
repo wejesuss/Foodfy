@@ -1,0 +1,20 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Criar Usuário</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="user-dashboard create">
+        <h5>Criar Usuário</h5>
+        <div class="options">    
+            <button type="submit" onclick="Validate.allFields(event)" form="create-user">Salvar</button>
+            <a href="/admin/users/"><button id="cancel">Cancelar</button></a>
+        </div>
+    </div>
+    <div class="fields create-box">
+        <form action="/admin/users" id="create-user" method="post" onsubmit="Validate.isInvalid(event)">
+            {% include "./register-fields.njk" %}
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Listagem de Chefs</title>
+{% endblock head %}
+
+{% block content %}
+<section id="box">
+    <div class="wrapper" style="display: flex; justify-content: space-between">
+        <h5 style="width: 940px; font-size: 24px; color: #111111;">Gerenciar chefs</h5>
+        {% if session.isAdmin %}
+            <a href="/admin/chefs/create"><button class="new-chef">Novo</button></a>
+        {% endif %}
+    </div>
+
+    <main class="chefs" style="margin: 30px auto">
+        {% for chef in chefs %}
+            <div class="chef">
+                <div class="chef-avatar">
+                    <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
+                </div>
+                <div class="chef-info">
+                    <h5>{{chef.name}}</h5>
+                    <a href="/admin/chefs/{{ chef.id }}" class="view">Visualizar</a>
+                </div>
+            </div>
+        {% endfor %}
+        
+    </main>
+    <div class="pagination"
+        data-page = {{pagination.page}}
+        data-total = {{pagination.total}}
+        data-limit = {{pagination.limit}}
+    ></div>
+</section>
+{% endblock content %}

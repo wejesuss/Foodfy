@@ -1,0 +1,35 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Gerenciamento de Usuários</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="user-dashboard">
+        <h5>Usuários</h5>
+        <a href="/admin/users/register"><button>Novo</button></a>
+    </div>
+    <main class="users" style="margin: 30px auto">
+        {% for user in users %}
+            <div class="user">
+                <div class="user-info">
+                    <h5>{{user.name}}</h5>
+                    <p>{{user.email}}</p>
+                </div>
+                <div class="user-actions">
+                    <a href="/admin/users/edit/{{ user.id }}">Editar</a>
+                    <button type="submit" form="{{loop.index0}}">Remover</button>
+                </div>
+                <form action="/admin/users?_method=DELETE" method="post" id="{{loop.index0}}" onsubmit="ValiteDelete.formDelete(event)">
+                    <input type="hidden" name="id" value="{{user.id}}">
+                </form>
+            </div>
+        {% endfor %}
+        
+    </main>
+    <div class="pagination"
+        data-page = {{pagination.page}}
+        data-total = {{pagination.total}}
+        data-limit = {{pagination.limit}}
+    ></div>
+{% endblock content %}

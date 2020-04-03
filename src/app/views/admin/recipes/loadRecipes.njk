@@ -1,0 +1,20 @@
+{% macro loadRecipes(recipes, files) %}
+    <div class="recipes">
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <div class="logo-image">
+                    {% for file in files %}
+                        {% if recipe.id == file.recipe_id %}
+                            <img src="{{ file.src }}" alt="{{ file.name }}">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="details">
+                    <h4 class="title">{{ recipe.title }}</h4>
+                    <p class="author">{{ recipe.chef_name }}</p>
+                    <a href="/admin/recipes/{{ recipe.id }}" class="view">Visualizar</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

@@ -1,0 +1,86 @@
+.session-box.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 130vh;
+}
+
+.header-session {
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-session .logo {
+    margin: 0 0 140px;
+}
+
+.header-session .login-context h3,
+.header-session .forgot-context h3 {
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    color: #111111;
+    text-align: center;
+}
+
+.login.container.form,
+.forgot.container.form {
+    width: 500px;
+    margin: 0px auto;
+    align-self: center;
+}
+
+form .fields .item:first-child {
+    margin-top: 0px;
+}
+
+form .fields .item {
+    margin-top: 35px;
+}
+
+form .fields .item div:first-child {
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: bold;
+    color: #111111;
+}
+
+form .fields .item input {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0;
+}
+
+form .fields .item input::placeholder {
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #999999;
+}
+
+div.footer {    
+    margin-top: 35px;
+}
+
+div.footer ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forgot.container div.footer ul {
+    justify-content: flex-end;
+}
+
+div.footer li a {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 16px;
+    color: #969696;
+}
+
+div.footer li button {
+    width: 140px;
+}

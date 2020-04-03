@@ -1,0 +1,28 @@
+{% extends 'model.njk' %}
+
+{% block head %}
+    <title>Listagem</title>
+{% endblock head %}
+
+{% block content %}
+    <section id="box">
+        <div class="wrapper" style="display: flex; justify-content: space-between">
+            <h3>Gerenciar receitas</h3>
+            {% if session.userId %}
+                <a href="/admin/recipes/create"><button class="new-recipe">Nova</button></a>
+            {% endif %}
+        </div>
+
+        {% from 'admin/recipes/loadRecipes.njk' import loadRecipes %}
+        {{ loadRecipes(recipes, files) }}
+        
+        <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+            data-limit = {{pagination.limit}}
+            data-filter = {{filter}}
+        >
+        </div>
+    </section>
+
+{% endblock content %}

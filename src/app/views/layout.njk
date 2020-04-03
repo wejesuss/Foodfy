@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    {% block head %}
+    <title>Foodfy</title>
+    {% endblock %}
+    <link rel="shortcut icon" href="\images\layouts\assets\Buffet-Steak.ico" type="image/x-icon">
+
+    {% include 'parts/imports.njk' %}
+</head>
+
+<body style="display: flex; flex-direction: column; height: 100%;">
+    {% include "parts/messages.njk" %}
+    <div class="wrapper">
+        {% include 'parts/header.njk' %}
+    {% block header %}
+
+    {% endblock header %}
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+    
+    {% block footer %}
+        {% include 'parts/footer.njk' %}
+    {% endblock footer %}
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

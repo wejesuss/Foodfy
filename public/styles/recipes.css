@@ -1,0 +1,100 @@
+/* === PAGE RECIPE === */
+div.recipe {
+    width: 940px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.recipe-header {
+    width: 100%;
+    text-align: center;
+}
+
+.recipe-header img{
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.recipe-header h2{
+    margin-top: -8px;
+    font-size: 36px;
+    color: #111111;
+    line-height: 42px;
+}
+
+.recipe-header h2::first-letter {
+    text-transform: capitalize;
+}
+
+.recipe-header p{
+    margin: 4px 0 30px;
+    font-size: 20px;
+    color: #777777;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+
+/* === RECIPE CONTENT === */
+
+.recipe-content {
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.recipe-menu {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.recipe-menu h3 {
+    margin-right: 8px;
+    font-size: 24px;
+    color: #111111;
+    line-height: 28px;
+}
+
+.recipe-menu h4 {
+    margin-right: 8px;
+    font-size: 12px;
+    color: #999999;
+    line-height: 14px;
+    cursor: pointer;
+}
+
+#ingredients, 
+#preparation {
+    margin-bottom: 35px;
+}
+
+#ingredients li::first-letter, 
+#preparation li::first-letter,
+#information p::first-letter {
+    text-transform: capitalize;
+}
+
+#information p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    text-align: justify;
+}
+
+/* === RECIPE INGREDIENTS LISTS === */
+
+li {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    list-style-position: inside;
+}
+
+/* === HIDE AND SHOW CONTENTS === */
+
+.topic-content.hidden {
+    display: none;
+}

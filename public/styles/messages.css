@@ -1,0 +1,88 @@
+@keyframes hideMessage {
+    0% {
+        top: -30%;
+        opacity: 0.5;
+    }
+    30% {
+        top: 32px;
+        opacity: 1;
+    }
+    60% {
+        top: 32px;
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0.5;
+    }
+    100% {
+        top: -50%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.messages {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 32px;
+
+    padding: 70px 150px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+
+    opacity: 1;
+    top: -30%;
+    z-index: 10;
+    animation: hideMessage 2.5s .5s ease-out forwards;
+}
+
+.messages.success {
+    background: #01B12A;
+}
+
+.messages.error {
+    background: #DC4747;
+}
+
+/* messages page */
+.message.error,
+.message.success {
+    padding: 50px 0 112px;
+    text-align: center;
+    margin: auto;
+}
+
+.message.error .information h3,
+.message.success .information h3 {
+    margin: 25px 0;
+    font-size: 32px;
+    color: indianred;
+}
+
+.message.error .information p,
+.message.success .information p {
+    font-size: 18px;
+    color: #777;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.message .lottie.success,
+.message .lottie.error {
+    height: 100px;
+}
+
+.message.success .information h3 {
+    color: #04c231;
+}
+
+.message.success .information p {
+    color: #851cdb;
+}

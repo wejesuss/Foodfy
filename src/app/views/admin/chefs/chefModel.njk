@@ -1,0 +1,30 @@
+<div class="item">
+    <div class="title">Avatar</div>
+    <div>
+        <div id="photos-upload">
+            <input type="file" 
+            name="photos" 
+            id="photos-input" 
+            accept="image/*" 
+            onchange="PhotosUpload.apply('handleFileInputChefs', event)"
+            >
+            <p>Enviar Avatar</p>
+        </div>
+        <div id="photos-preview">
+            {% if file %}
+                    <div class="photo" id="{{file.id}}" style="animation: toRight forwards 200ms ease-in-out;">
+                        <img src="{{file.src}}" alt="{{file.name}}">
+                        <i class="material-icons" onclick="PhotosUpload.removePreviousPhoto(event)">
+                            close
+                        </i>
+                    </div>
+                <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <div class="title">Nome do chef</div>
+    <input type="text" name="name" value="{{ chef.name }}" required>
+</div>
