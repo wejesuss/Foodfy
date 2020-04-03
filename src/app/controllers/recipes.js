@@ -51,7 +51,8 @@ exports.post = async function(req, res) {
     
         req.body.user_id = req.session.userId
 
-        req.body.information = formatInformationService.load('toNewLineTag', req.body.information)
+        if(req.body.information)
+            req.body.information = formatInformationService.load('toNewLineTag', req.body.information)
         req.body.title = req.body.title.replace(/(')/g, "$1'")
 
         const recipeId = await Recipes.create(req.body)       
@@ -124,7 +125,8 @@ exports.edit = async function(req, res) {
         files = await RecipeFiles.findAll({ where: {recipe_id: recipe.id} })
         files = await addSrcToFilesArray(files)
 
-        recipe.information = formatInformationService.load('toNewLineCharacter', recipe.information)
+        if(recipe.information)
+            recipe.information = formatInformationService.load('toNewLineCharacter', recipe.information)
     
         return res.render('admin/recipes/edit', { recipe, chefs: options, files })   
     } catch (err) {
@@ -152,7 +154,9 @@ exports.put = async function(req, res) {
             await Promise.all(recipeFilesPromise)
         }
         
-        req.body.information = formatInformationService.load('toNewLineTag', req.body.information)
+        if(req.body.information)
+            req.body.information = formatInformationService.load('toNewLineTag', req.body.information)
+        req.body.title = req.body.title.replace(/(')/g, "$1'")
 
         const { id, title, chef_id, ingredients, preparation, information } = req.body
         await Recipes.update(id, { 

@@ -80,7 +80,7 @@ const Base = {
             Object.keys(fields).map(key => {
                 keys.push(key)
 
-                if (typeof(fields[key]) == 'object') {
+                if (Array.isArray(fields[key])) {
                     values.push(`'{${fields[key]}}'`)
                 } else {
                     values.push(`'${fields[key]}'`)
@@ -105,7 +105,7 @@ const Base = {
             let query = `UPDATE ${this.table} SET`
 
             Object.keys(fields).map(key => {
-                if (typeof(fields[key]) == 'object') {
+                if (Array.isArray(fields[key])) {
                     values.push(`${key} = '{${fields[key]}}'`)
                 } else {
                     values.push(`${key} = '${fields[key]}'`)
