@@ -1,4 +1,4 @@
-{% macro loadRecipes(recipes, files) %}
+{% macro loadRecipes(recipes, files, redirect) %}
     <div class="recipes">
         {% for recipe in recipes %}
             <div class="recipe">
@@ -12,7 +12,7 @@
                 <div class="details">
                     <h4 class="title">{{ recipe.title }}</h4>
                     <p class="author">{{ recipe.chef_name }}</p>
-                    <a href="/admin/recipes/{{ recipe.id }}" class="view">Visualizar</a>
+                    <a href="{{redirect}}{{ recipe.id }}" class="view">Visualizar</a>
                 </div>
             </div>
         {% endfor %}

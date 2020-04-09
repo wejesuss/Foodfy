@@ -1,4 +1,5 @@
 {% extends 'layout.njk' %}
+{% from 'admin/recipes/loadRecipes.njk' import loadRecipes %}
 
 {% block head %}
     <title>Chef {{chef.name}}</title>
@@ -20,8 +21,7 @@
     </div>
     <section id="box">
         <h3>Receitas</h3>
-        {% from './loadRecipes.njk' import loadRecipes %}
-        {{loadRecipes(recipes, files)}}
+        {{loadRecipes(recipes, files, '/recipes/')}}
         {% if recipes == '' %}
             <h3>Não possui</h3>
         {% endif %}

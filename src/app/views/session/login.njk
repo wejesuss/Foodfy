@@ -1,4 +1,5 @@
 {% extends "./model-session.njk" %}
+{% import "parts/users-fields.njk" as users %}
 
 {% block header %}
 <div class="login-context">
@@ -11,7 +12,9 @@
     <form method="POST" action="/users/login" onsubmit="Validate.isInvalid(event)">
         
         <div class="fields">
-            {% include 'session/fields.njk' %}
+            {% call users.render(user, error, 'Email', 'Senha') %}
+
+            {% endcall %}
         </div>
 
         <div class="footer">

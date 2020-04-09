@@ -132,6 +132,8 @@ main div.recipes {
 
 .card {
     width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card img {
@@ -154,6 +156,7 @@ main div.recipes {
     color: #777777;
     line-height: 16px;
     text-transform: capitalize;
+    margin-top: auto;
 }
 
 footer {

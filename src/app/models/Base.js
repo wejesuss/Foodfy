@@ -81,7 +81,8 @@ const Base = {
                 keys.push(key)
 
                 if (Array.isArray(fields[key])) {
-                    values.push(`'{${fields[key]}}'`)
+                    const separetWithComma = '","'
+                    values.push(`'{"${fields[key].join(separetWithComma)}"}'`)
                 } else {
                     values.push(`'${fields[key]}'`)
                 }
@@ -106,7 +107,8 @@ const Base = {
 
             Object.keys(fields).map(key => {
                 if (Array.isArray(fields[key])) {
-                    values.push(`${key} = '{${fields[key]}}'`)
+                    const separetWithComma = '","'
+                    values.push(`${key} = '{"${fields[key].join(separetWithComma)}"}'`)
                 } else {
                     values.push(`${key} = '${fields[key]}'`)
                 }

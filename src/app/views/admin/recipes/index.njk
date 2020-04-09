@@ -1,4 +1,5 @@
 {% extends 'model.njk' %}
+{% from 'admin/recipes/loadRecipes.njk' import loadRecipes %}
 
 {% block head %}
     <title>Listagem</title>
@@ -13,8 +14,7 @@
             {% endif %}
         </div>
 
-        {% from 'admin/recipes/loadRecipes.njk' import loadRecipes %}
-        {{ loadRecipes(recipes, files) }}
+        {{ loadRecipes(recipes, files, '/admin/recipes/') }}
         
         <div class="pagination"
             data-page = {{pagination.page}}

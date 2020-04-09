@@ -34,7 +34,7 @@ module.exports = {
             FROM ${this.table}
             LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
             GROUP BY chefs.id
-            ORDER BY total_recipes DESC
+            ORDER BY id ASC
             LIMIT $1 OFFSET $2
             `
             

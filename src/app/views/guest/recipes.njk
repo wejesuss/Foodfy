@@ -1,4 +1,5 @@
 {% extends "layout.njk" %}
+{% from './loadRecipes.njk' import loadRecipes %}
 
 {% block head %}
     <title>Receitas</title>
@@ -9,19 +10,9 @@
         {% if filter %}
             <h3>Procurando por "{{filter}}"</h3>
         {% endif %}
-        <div class="recipes">
-        {% for recipe in recipes %}
-            <div class="card">
-                {% for file in files %}
-                    {% if recipe.id == file.recipe_id %}
-                        <a href="/recipes/{{recipe.id}}"><img src="{{ file.src }}" alt="{{ file.name }}"></a>
-                    {% endif %}
-                {% endfor %}
-                <h5>{{recipe.title}}</h5>
-                <p>por {{recipe.chef_name}}</p>
-            </div>
-        {% endfor %}
-        </div>
+
+        {{loadRecipes(recipes, files)}}
+
         <div class="pagination"
             data-page = {{pagination.page}}
             data-total = {{pagination.total}}

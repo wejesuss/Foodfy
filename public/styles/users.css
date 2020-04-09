@@ -26,7 +26,7 @@ main.users {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 64px;
-    grid-gap: 60px 200px;
+    grid-gap: 60px 135px;
     align-items: center;
     justify-content: center;
 }

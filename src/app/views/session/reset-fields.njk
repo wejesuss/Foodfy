@@ -1,45 +1,14 @@
-<div class="item">
-    <div>Email</div>
-    <div class="input">
-        <input 
-        required
-        type="email" 
-        name="email" 
-        placeholder="Digite seu Email" 
-        value="{{ user.email }}"
-        onblur="Validate.apply(this, 'isEmail')"
-        onkeydown="Validate.clearBorderError(this)"
-        {% if error %}
-            class="red"
-        {% endif %}
-        >
-    </div>
-</div>
+{% import "parts/users-fields.njk" as users %}
 
-<div class="item">
-    <div>Nova Senha</div>
-    <div class="input">
-        <input 
-        required
-        type="password" 
-        name="password"
-        placeholder="Digite sua nova senha"
-        onkeydown="Validate.clearBorderError(this)"
-        {% if error %}
-            class="red"
-        {% endif %}
-        >
-    </div>
-</div>
-
+{% call users.render(user, error, 'Email', 'Nova Senha') %}
 <div class="item">
     <div>Repetir Senha</div>
     <div class="input">
         <input 
         required
-        type="password" 
+        type="password"
         name="passwordRepeat"
-        placeholder="Repita sua nova senha"
+        placeholder="Repita sua Nova Senha"
         onkeydown="Validate.clearBorderError(this)"
         {% if error %}
             class="red"
@@ -47,5 +16,6 @@
         >
     </div>
 </div>
+{% endcall %}
 
 <input type="hidden" name="token" value="{{token}}">

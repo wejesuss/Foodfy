@@ -1,0 +1,40 @@
+{% macro render(user, error, placeEmail, placePassword) %}
+<div class="item">
+    <div>Email</div>
+    <div class="input">
+        <input 
+        required
+        type="email" 
+        name="email" 
+        placeholder="Digite seu {{placeEmail}}" 
+        value="{{ user.email }}"
+        onblur="Validate.apply(this, 'isEmail')"
+        onkeydown="Validate.clearBorderError(this)"
+        {% if error %}
+            class="red"
+        {% endif %}
+        >
+    </div>
+</div>
+
+{% if placePassword %}
+    <div class="item">
+        <div>{{placePassword}}</div>
+        <div class="input">
+            <input 
+            required
+            type="password" 
+            name="password"
+            placeholder="Digite sua {{placePassword}}"
+            onkeydown="Validate.clearBorderError(this)"
+            {% if error %}
+                class="red"
+            {% endif %}
+            >
+        </div>
+    </div>
+
+    {{ caller() }}
+{% endif %}
+
+{% endmacro %}

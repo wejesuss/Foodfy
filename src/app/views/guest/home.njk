@@ -1,4 +1,5 @@
 {% extends "layout.njk" %}
+{% from './loadRecipes.njk' import loadRecipes %}
 
 {% block header %}
     <section class="hero">
@@ -14,19 +15,6 @@
     <main>
         <h3>Mais acessadas</h3>
 
-        <div class="recipes">
-            {% for recipe in recipes %}
-                <div class="card">
-                    {% for file in files %}
-                    {% if recipe.id == file.recipe_id %}
-                        <a href="/recipes/{{recipe.id}}"><img src="{{ file.src }}" alt="{{ file.name }}"></a>
-                    {% endif %}
-                    {% endfor %}
-                    <h5>{{recipe.title}}</h5>
-                    <p>por {{recipe.chef_name}}</p>
-                </div>
-            {% endfor %}
-
-        </div>
+        {{loadRecipes(recipes, files)}}
     </main>
 {% endblock %}

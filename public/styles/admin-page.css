@@ -322,7 +322,6 @@ button[type="submit"] {
     list-style-type: '- ';
 }
 
-
 /* === CHEF PAGE === */
 
 div.create-box,
@@ -376,7 +375,7 @@ div.edit-box {
     margin-bottom: 10px;
     font-weight: normal;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 17.5px;
     color: #111111;
     line-height: 21px;
 }
