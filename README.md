@@ -51,9 +51,8 @@
 
 5. Após configurar o arquivo _db.js_ e criar o banco, execute o arquivo seed.js (`node seed.js`) para popular alguns dados e testar a aplicação.
 
-6. Execute `npm start` para iniciar a aplicação.
-    * Obs: ***Tome Cuidado*** ao __excluir__ as entidades, pois a grande maioria das imagens serão compartilhadas entre si, caso exclua algum chefe, usuário ou receita, reponha uma imagem como padrão no caminho 
-    **public/images/recipes-and-chefs/**, sendo __chefs.jpg__ para chefes e __recipes.png__ para receitas.
+6. Execute `npm start` para iniciar a aplicação. Abra o navegador em (**http://localhost:5000/**)
+    * Obs: ***Tome Cuidado*** ao __excluir__ as entidades, pois _**a grande maioria das imagens**_ serão compartilhadas entre si, caso exclua algum chefe, usuário ou receita, reponha uma imagem como padrão no caminho **public/images/recipes-and-chefs/**, sendo __chefs.jpg__ para chefes e __recipes.png__ para receitas.
 
 ### Um pouco mais de arroz
 
