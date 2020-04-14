@@ -48,6 +48,7 @@ exports.post = async function(req, res) {
         const password = randomBytes(8).toString("hex")
         req.body.password = await hash(password, 8)
 
+        req.body.name = req.body.name.replace(/(')/g, "$1'")
         await User.create(req.body)
         await mailer.sendMail({
             from: 'no-reply@foodfy.com',
@@ -85,6 +86,7 @@ exports.put = async function(req, res) {
     const { user } = req
     try {
         let { id, name, email, is_admin } = req.body
+        name = name.replace(/(')/g, "$1'")
         await User.update(id, {
             name,
             email,

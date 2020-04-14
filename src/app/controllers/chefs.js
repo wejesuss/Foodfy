@@ -42,6 +42,7 @@ exports.post = async function(req, res) {
         
         if(fileId) {
             req.body.file_id = fileId
+            req.body.name = req.body.name.replace(/(')/g, "$1'")
             const id = await Chefs.create(req.body)
             
             const chef = await Chefs.find(id)
@@ -149,7 +150,7 @@ exports.put = async function(req, res) {
         if(!fileId) fileId = req.body.file_id
     
         await Chefs.update(req.body.id, {
-            name: req.body.name,
+            name: req.body.name.replace(/(')/g, "$1'"),
             file_id: fileId
         })
         

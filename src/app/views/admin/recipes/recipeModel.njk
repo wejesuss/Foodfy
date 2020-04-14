@@ -29,7 +29,7 @@
 
 <div class="item">
     <div class="title">Nome da receita</div>
-    <input type="text" name="title" value="{{ recipe.title }}" required>
+    <input type="text" name="title" value="{{recipe.title}}" required>
 </div>
 
 <div class="item">
@@ -55,7 +55,7 @@
         {% if recipe.ingredients %}
             {% for ingredient in recipe.ingredients %}
             <div class="ingredient">
-                <input type="text" name="ingredients[]" value="{{ ingredient }}" required>
+                <input type="text" name="ingredients[]" value="{{ingredient}}" required>
                 {% if not loop.index0 == 0 %}
                 <button 
                 type="button" 
@@ -80,7 +80,7 @@
         {% if recipe.preparation %}
             {% for preparation in recipe.preparation %}
             <div class="preparation">
-                <input type="text" name="preparation[]" value="{{ preparation }}" required>
+                <input type="text" name="preparation[]" value="{{preparation}}" required>
                 {% if not loop.index0 == 0 %}
                 <button 
                 type="button" 
@@ -101,5 +101,5 @@
 
 <div class="item">
     <div class="title">Informações adicionais</div>
-    <textarea name="information" placeholder="Informações adicionais">{{ recipe.information }}</textarea>
+    <textarea name="information" placeholder="Informações adicionais">{{recipe.information}}</textarea>
 </div>

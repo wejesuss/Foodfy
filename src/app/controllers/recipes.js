@@ -103,10 +103,9 @@ exports.show = async function(req, res) {
 exports.edit = async function(req, res) {
     try {
         const { id } = req.params
-    
         const recipe = await Recipes.find({ where: {id} })
-        let { recipes, files } = await loadPaginateService.load('Recipes', 1, 4)
 
+        let { recipes, files } = await loadPaginateService.load('Recipes', 1, 4)
         if (!recipe) return res.render(`admin/recipes/index`, {
             recipes,
             pagination: {},
@@ -127,7 +126,7 @@ exports.edit = async function(req, res) {
 
         if(recipe.information)
             recipe.information = formatInformationService.load('toNewLineCharacter', recipe.information)
-    
+        
         return res.render('admin/recipes/edit', { recipe, chefs: options, files })   
     } catch (err) {
         console.error(err)
