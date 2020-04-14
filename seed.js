@@ -1,4 +1,5 @@
 const faker = require('faker')
+faker.locale= 'pt_BR'
 const { hash } = require('bcryptjs')
 
 const { chefs: dataChefs, recipes: dataRecipes } = require('./backupfoodfy.json')
