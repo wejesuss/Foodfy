@@ -9,7 +9,7 @@ const email = (token) => `<h2>Perdeu a senha?</h2>
 <br>
 <br>
 <p>
-    <a href="http://localhost:3000/users/password-reset?token=${token}" target="_blank">
+    <a href="http://localhost:5000/users/password-reset?token=${token}" target="_blank">
     RECUPERAR SENHA
     </a>
 </p>
