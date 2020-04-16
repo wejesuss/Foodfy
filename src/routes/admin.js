@@ -16,7 +16,7 @@ routes.put('/profile', profileValidator.put, profile.put)
 routes.get('/recipes/dashboard', profileValidator.myRecipes, profile.myRecipes)
 
 routes.use('/recipes', recipes)
-routes.use('/chefs', adminOnly, chefs)
+routes.use('/chefs', chefs)
 routes.use('/users', adminOnly, users)
 
 module.exports = routes
