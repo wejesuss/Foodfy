@@ -112,6 +112,7 @@ DELETE FROM recipes;
 DELETE FROM chefs;
 DELETE FROM recipe_files;
 DELETE FROM files;
+DELETE FROM session;
 
 -- restart sequence ids
 ALTER SEQUENCE users_id_seq RESTART WITH 1;
