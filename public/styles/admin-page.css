@@ -363,6 +363,7 @@ div.edit-box {
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .chef-info {
@@ -397,6 +398,7 @@ div.edit-box {
     width: 200px;
     border-radius: 50%;
     height: 200px;
+    object-fit: cover;
 }
 
 .chef-header h2 {
